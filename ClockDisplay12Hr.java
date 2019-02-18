@@ -78,7 +78,7 @@ public class ClockDisplay12Hr
      */
     private void updateDisplay()
     {
-        double hour = 0;
+        double hour = hours.getValue();
         String minute;
         
         if(hour >= 12){            
@@ -89,16 +89,18 @@ public class ClockDisplay12Hr
         }
         
         /** 
-         * Something should go here that makes it so that when 11:59 pm
-         * switches to 12, it will become 12:00 am.
+         * This makes it so that when 11:59 pm
+         * switches to 12, it will become 12:00 am and vice versa.
          */
-        
-        
+
        if(hour >= 12){
-        
+           hour -= 12;
         }
         
-        displayString = hours.getDisplayValue() + ":" +
-                        minutes.getDisplayValue() + minute;
+       if(hour == 12){
+           hour = 12; 
+        }
+        
+        displayString = hour + ":" + minutes.getDisplayValue() + minute;
     }
 }
