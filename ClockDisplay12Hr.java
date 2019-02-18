@@ -88,6 +88,16 @@ public class ClockDisplay12Hr
             minute = "am";
         }
         
+        /** 
+         * Something should go here that makes it so that when 11:59 pm
+         * switches to 12, it will become 12:00 am.
+         */
+        
+        
+       if(hour >= 12){
+        
+        }
+        
         displayString = hours.getDisplayValue() + ":" +
                         minutes.getDisplayValue() + minute;
     }
